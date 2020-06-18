@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import ColorBox from "./Colorbox";
-import "../Styles/Palette.css";
-
 ////// SLIDER IMPORTS //////////////////////////
 import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 ////////////////////////////////////////////////
+import "../Styles/Palette.css";
+
+import ColorBox from "./Colorbox";
 
 // import seedColors from "./seedColors";
 // import { generatePalette } from "../Utilities/colorHelpers";
@@ -27,13 +27,15 @@ export default class palette extends Component {
     ));
     return (
       <div className="Palette">
-        <Slider
-          defaultValue={level}
-          min={100}
-          max={900}
-          step={100}
-          onAfterChange={this.changeLevel}
-        />
+        <div className="slider">
+          <Slider
+            defaultValue={level}
+            min={100}
+            max={900}
+            step={100}
+            onAfterChange={this.changeLevel}
+          />
+        </div>
         {/* NavBar goes here */}
         <div className="Palette-colors">{colorBoxes}</div>
         {/* Footer eventually */}
